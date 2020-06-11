@@ -12,7 +12,7 @@ Feature: Create new register and performing the checkout
     When  I click on Female Radio Button
     And   I enter firstname lastname email company name password confirmpassword
       |firstname|lastname|email                  |companyname     |password |confirmpassword|
-      |lucky    |star    |luckystar42@testing.com|luckystarcompany|luckystar|luckystar      |
+      |lucky    |star    |luckystar44@testing.com|luckystarcompany|luckystar|luckystar      |
     And   I select Day Month Year
     And   I click on register button
     Then  I should see Your registration completed
