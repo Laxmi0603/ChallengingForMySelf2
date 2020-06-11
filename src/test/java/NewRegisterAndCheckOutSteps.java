@@ -18,11 +18,13 @@ public class NewRegisterAndCheckOutSteps extends TestRunner {
 
         public static HomePage homePage;
         public static RegisterPage registerPage;
+
         public static UserPage userPage;
 
         @Before
         public void launchBrowser()
         {
+
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             driver.manage().window().maximize();
             System.out.println("This is the command to open the website:@BeforeAll");
