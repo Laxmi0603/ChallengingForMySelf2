@@ -85,6 +85,7 @@ public class UserPage {
     }
 
     @FindBy(xpath = "(//input[@value='Continue'])[1]") public WebElement continueButton1;
+
     public void clickContinueButtonForBillingAddress()
     {
         try

@@ -28,28 +28,27 @@ public class TestRunner
 {
    public static WebDriver driver;
 
-    /*public static final String USERNAME = "lakshmi287";
+    public static final String USERNAME = "lakshmi287";
     public static final String AUTOMATE_KEY = "vzyFrx8KDQkjc9XA9Whe";
     public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
-*/
+
     @BeforeClass
     public static void startBrowser() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-/*
-        DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("browser", "IE");
-        caps.setCapability("browser_version", "11.0");
-        caps.setCapability("os", "Windows");
-        caps.setCapability("os_version", "10");
-        caps.setCapability("resolution", "1280x800");
-        caps.setCapability("name", "Bstack-[Java] Sample Test");
+       // WebDriverManager.chromedriver().setup();
+        //driver = new ChromeDriver();
 
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("browser", "Edge");
+        caps.setCapability("browser_version", "83.0");
+        caps.setCapability("os", "OS X");
+        caps.setCapability("os_version", "Mojave");
+        caps.setCapability("resolution", "1024x768");
+        caps.setCapability("name", "LakshmiRegressionTest");
         try {
              driver = new RemoteWebDriver(new URL(URL), caps);
         } catch (MalformedURLException e) {
             e.printStackTrace();
-        }*/
+        }
 
     }
     @AfterClass
