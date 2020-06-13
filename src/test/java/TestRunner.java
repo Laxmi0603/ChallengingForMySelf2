@@ -15,7 +15,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 @CucumberOptions(
-        features = {"src/test/resources/LoginWithValidUserAndPerformCheckout.feature"},
+        //features = {"src/test/resources/LoginWithValidUserAndPerformCheckout.feature"},
        // glue = {"stepDefinitions"},
         plugin = {"pretty", "html:target/site/cucumber-pretty", "json:target/cucumber.json"},
           // plugin = {"json:target/cucumber.json","html:target/site/cucumber-pretty"}
