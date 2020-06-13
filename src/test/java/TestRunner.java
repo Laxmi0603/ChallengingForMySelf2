@@ -15,11 +15,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 @CucumberOptions(
-        //features = {"src/test/resources"},
+        features = {"src/test/resources/LoginWithValidUserAndPerformCheckout.feature"},
        // glue = {"stepDefinitions"},
-        plugin = {"pretty", "html:target/site/cucumber-pretty", "json:target/cucumber.json"}
+        plugin = {"pretty", "html:target/site/cucumber-pretty", "json:target/cucumber.json"},
           // plugin = {"json:target/cucumber.json","html:target/site/cucumber-pretty"}
-         //strict = true
+         strict = true
          //plugin = {"pretty:target/test.html"}
         //tags = {"@Tag1"}
 )
@@ -28,15 +28,15 @@ public class TestRunner
 {
    public static WebDriver driver;
 
-    public static final String USERNAME = "lakshmi287";
+    /*public static final String USERNAME = "lakshmi287";
     public static final String AUTOMATE_KEY = "vzyFrx8KDQkjc9XA9Whe";
     public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
-
+*/
     @BeforeClass
     public static void startBrowser() {
-        //WebDriverManager.chromedriver().setup();
-        //driver = new ChromeDriver();
-
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+/*
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("browser", "IE");
         caps.setCapability("browser_version", "11.0");
@@ -49,7 +49,7 @@ public class TestRunner
              driver = new RemoteWebDriver(new URL(URL), caps);
         } catch (MalformedURLException e) {
             e.printStackTrace();
-        }
+        }*/
 
     }
     @AfterClass

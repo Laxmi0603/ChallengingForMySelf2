@@ -9,6 +9,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import pageObjects.HomePage;
+import pageObjects.LoginPage;
 import pageObjects.RegisterPage;
 import pageObjects.UserPage;
 
@@ -18,6 +19,7 @@ public class NewRegisterAndCheckOutSteps extends TestRunner {
 
         public static HomePage homePage;
         public static RegisterPage registerPage;
+        public static LoginPage loginPage;
 
         public static UserPage userPage;
 
@@ -32,6 +34,7 @@ public class NewRegisterAndCheckOutSteps extends TestRunner {
             homePage = new HomePage(driver);
             registerPage = new RegisterPage(driver);
             userPage = new UserPage(driver);
+            loginPage = new LoginPage(driver);
 
         }
 
