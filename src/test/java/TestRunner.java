@@ -48,11 +48,10 @@ public class TestRunner
        // driver = new EdgeDriver();
 
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("browser", "IE");
-        caps.setCapability("browser_version", "11.0");
-        caps.setCapability("os", "Windows");
-        caps.setCapability("os_version", "10");
-        caps.setCapability("resolution", "1024x768");
+        caps.setCapability("browserName", "android");
+        caps.setCapability("device", "Google Pixel 4 XL");
+        caps.setCapability("realMobile", "true");
+        caps.setCapability("os_version", "10.0");
         caps.setCapability("name", "Lakshmi Regression Test");
 
         try {
