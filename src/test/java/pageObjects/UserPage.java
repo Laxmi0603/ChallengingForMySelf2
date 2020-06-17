@@ -1,11 +1,15 @@
 package pageObjects;
 
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class UserPage {
     WebDriver driver;
@@ -24,16 +28,20 @@ public class UserPage {
     {
         Assertions.assertTrue(userPageHeader.isDisplayed(),"User page is displayed?");
     }
-    @FindBy(xpath = "(//input[@value='Add to cart'])[1]") public WebElement addtocartButton;
+    @FindBy(css = "input.product-box-add-to-cart-button") public WebElement addtocartButton;
     public void clickAddToCart()
     {
-        driver.navigate().refresh();
         addtocartButton.click();
     }
-    @FindBy(css = "span.cart-label") public WebElement shoppingCartLink;
-    public void clickShoppingCartLink()
-    {
-        shoppingCartLink.click();
+   // @FindBy(xpath = "//a//span[@class='cart-label']") public WebElement shoppingCartLink;
+
+
+    public void clickShoppingCartLink() throws InterruptedException {
+       // WebDriverWait wait = new WebDriverWait(driver,20);
+        //wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a//span[contains(text(),'(1)')]")));
+        //shoppingCartLink.click();
+        Thread.sleep(3000);
+        driver.navigate().to("http://twentyconsulting-001-site1.dtempurl.com/cart");
     }
 
     @FindBy(xpath = "//div[@class='page-title']/h1") public WebElement shoppingCartPageHeader;
@@ -118,7 +126,7 @@ public class UserPage {
         }
         continueButton3.click();
     }
-    @FindBy(xpath = "(//input[@value='Continue'])[5]") public WebElement continueButton4;
+    @FindBy(css = "input.payment-info-next-step-button") public WebElement continueButtonForPaymentInfo;
     public void clickContinueButtonForPaymentInfo()
     {
         try
@@ -127,7 +135,7 @@ public class UserPage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        continueButton4.click();
+        continueButtonForPaymentInfo.click();
     }
     @FindBy(xpath = "//input[@value='Confirm']") public WebElement confirmOrderButton;
     public void clickConfirmOrder()

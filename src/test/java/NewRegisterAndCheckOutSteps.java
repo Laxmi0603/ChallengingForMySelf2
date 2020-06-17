@@ -8,21 +8,18 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import pageObjects.HomePage;
-import pageObjects.LoginPage;
-import pageObjects.RegisterPage;
-import pageObjects.UserPage;
+import pageObjects.*;
 
 import java.util.concurrent.TimeUnit;
 
-public class NewRegisterAndCheckOutSteps extends TestRunner {
+public class NewRegisterAndCheckOutSteps extends TestRunner
+{
 
-        public static HomePage homePage;
+        /*public static HomePage homePage;
         public static RegisterPage registerPage;
         public static LoginPage loginPage;
-
         public static UserPage userPage;
-
+/*
         @Before
         public void launchBrowser()
         {
@@ -36,50 +33,51 @@ public class NewRegisterAndCheckOutSteps extends TestRunner {
             userPage = new UserPage(driver);
             loginPage = new LoginPage(driver);
 
-        }
+        }*/
 
         @Given("I navigate to url {string}")
         public void iNavigateToUrl(String url)
         {
-            homePage.gotoHomePage(url);
+           BaseTest.homePage.gotoHomePage(url);
         }
         @When("I click on Register link")
         public void iClickOnRegisterLink() {
-            homePage.clickRegisterLink();
+            BaseTest.homePage.clickRegisterLink();
         }
         @Then("I should be navigated to Register page")
         public void iShouldBeNavigatedToRegisterPage() {
-            registerPage.verifyRegisterPageHeader();
+            BaseTest.registerPage.verifyRegisterPageHeader();
         }
         @When("I click on Female Radio Button")
-        public void iClickOnFemaleRadioButton() {
-            registerPage.clickFemaleRadioButton();
+        public void iClickOnFemaleRadioButton()
+        {
+          BaseTest.registerPage.clickFemaleRadioButton();
         }
         @And("I enter firstname lastname email company name password confirmpassword")
         public void iEnterFirstnameLastnameEmailCompanyNamePasswordConfirmpassword(DataTable dataTable) {
             driver.navigate().refresh();
-            registerPage.setFirstNameTextBox(dataTable.cell(1, 0));
-            registerPage.setLastNameTextBox(dataTable.cell(1, 1));
-            registerPage.setEmailTextBox(dataTable.cell(1, 2));
-            registerPage.setCompanyNameTextBox(dataTable.cell(1, 3));
-            registerPage.setPasswordTextBox(dataTable.cell(1, 4));
-            registerPage.setConfirmPasswordTextBox(dataTable.cell(1, 5));
+            BaseTest.registerPage.setFirstNameTextBox(dataTable.cell(1, 0));
+            BaseTest.registerPage.setLastNameTextBox(dataTable.cell(1, 1));
+            BaseTest.registerPage.setEmailTextBox(dataTable.cell(1, 2));
+            BaseTest.registerPage.setCompanyNameTextBox(dataTable.cell(1, 3));
+            BaseTest.registerPage.setPasswordTextBox(dataTable.cell(1, 4));
+            BaseTest.registerPage.setConfirmPasswordTextBox(dataTable.cell(1, 5));
         }
 
         @And("I select Day Month Year")
         public void iSelectDayMonthYear() {
-            registerPage.setBirthDropDown();
+            BaseTest.registerPage.setBirthDropDown();
         }
 
         @And("I click on register button")
         public void iClickOnRegisterButton() {
-            registerPage.clickRegisterButton();
+            BaseTest.registerPage.clickRegisterButton();
         }
 
         @Then("I should see Your registration completed")
         public void iShouldSeeYourRegistrationCompleted()
         {
-            registerPage.verifyNewUserRegistration();
+            BaseTest.registerPage.verifyNewUserRegistration();
         }
         public String getPageTitle()
         {
@@ -89,7 +87,7 @@ public class NewRegisterAndCheckOutSteps extends TestRunner {
         public void iClickContinueButton()
         {
             System.out.println(getPageTitle());
-            registerPage.clickContinueButton();
+            BaseTest.registerPage.clickContinueButton();
         }
 
         @Then("I should be navigated to user home page")
@@ -97,20 +95,19 @@ public class NewRegisterAndCheckOutSteps extends TestRunner {
         {
             driver.navigate().refresh();
             System.out.println(getPageTitle());
-            userPage.verifyUserPageHeader();
+            BaseTest.userPage.verifyUserPageHeader();
         }
 
         @And("I click add to cart button for the first product")
         public void iClickAddToCartButtonForTheFirstProduct()
         {
-            userPage.clickAddToCart();
+            BaseTest.userPage.clickAddToCart();
             driver.navigate().refresh();
         }
 
         @And("I click on shopping cart link")
-        public void iClickOnShoppingCartLink()
-        {
-            userPage.clickShoppingCartLink();
+        public void iClickOnShoppingCartLink() throws InterruptedException {
+            BaseTest.userPage.clickShoppingCartLink();
             driver.navigate().refresh();
         }
 
@@ -118,73 +115,74 @@ public class NewRegisterAndCheckOutSteps extends TestRunner {
         public void iShouldBeNavigatedToShoppingCartPage()
         {
             System.out.println(getPageTitle());
-            userPage.verifyShoppingCartPageHeader();
+            BaseTest.userPage.verifyShoppingCartPageHeader();
         }
 
         @When("I click the terms of service check box")
         public void iClickTheTermsOfServiceCheckBox()
         {
-            userPage.clickTermsOfServiceCheckBox();
+            BaseTest.userPage.clickTermsOfServiceCheckBox();
         }
         @And("I click on check out button")
         public void iClickOnCheckOutButton()
         {
-            userPage.clickCheckoutButton();
+            BaseTest.userPage.clickCheckoutButton();
         }
 
         @Then("I should be navigated to checkout page")
         public void iShouldBeNavigatedToCheckoutPage()
         {
-            userPage.verifyCheckOutPageHeader();
+            BaseTest.userPage.verifyCheckOutPageHeader();
         }
 
         @When("I click country and select united kingdom")
         public void iClickCountryAndSelectUnitedKingdom()
         {
-            userPage.setCountryDropDown();
+            BaseTest.userPage.setCountryDropDown();
         }
 
         @And("I enter city address postcode phonenumber")
         public void iEnterCityAddressPostcodePhonenumber(DataTable dataTable)
         {
-            userPage.setCityTextBox(dataTable.cell(1,0));
-            userPage.setAddress(dataTable.cell(1,1));
-            userPage.setPostcodeTextBox(dataTable.cell(1,2));
-            userPage.setPhonenumberTextBox(dataTable.cell(1,3));
+            BaseTest.userPage.setCityTextBox(dataTable.cell(1,0));
+            BaseTest.userPage.setAddress(dataTable.cell(1,1));
+            BaseTest.userPage.setPostcodeTextBox(dataTable.cell(1,2));
+            BaseTest.userPage.setPhonenumberTextBox(dataTable.cell(1,3));
         }
         @And("I click on continue button for billing address")
         public void iClickOnContinueButtonForBillingAddress()
         {
-            userPage.clickContinueButtonForBillingAddress();
+            BaseTest.userPage.clickContinueButtonForBillingAddress();
         }
         @And("I set default shipping method")
         public void iSetDefaultShippingMethod()
         {
-            userPage.clickContinueButtonForShippingMeth();
+            BaseTest.userPage.clickContinueButtonForShippingMeth();
         }
 
         @And("I set default payment method")
         public void iSetDefaultPaymentMethod()
         {
-            userPage.clickContinueButtonForPaymentMeth();
+            BaseTest.userPage.clickContinueButtonForPaymentMeth();
         }
 
         @And("I set default payment information")
         public void iSetDefaultPaymentInformation()
         {
-            userPage.clickContinueButtonForPaymentInfo();
+            BaseTest.userPage.clickContinueButtonForPaymentInfo();
         }
 
         @And("I confirm the order")
         public void iConfirmTheOrder()
         {
-            userPage.clickConfirmOrder();
+            BaseTest.userPage.clickConfirmOrder();
         }
         @Then("I should see the order confirmation msg {string}")
         public void iShouldSeeTheOrderConfirmationMsg(String msg)
         {
-            userPage.verifyOrderSuccessMsg(msg);
+            BaseTest.userPage.verifyOrderSuccessMsg(msg);
         }
+        /*
         @After
         public void closeBrowser(Scenario scenario)
         {
@@ -192,4 +190,5 @@ public class NewRegisterAndCheckOutSteps extends TestRunner {
             scenario.embed(screenShotByte,"image/png");
             System.out.println("This is the command to close the website:@AfterAll");
         }
+        */
 }

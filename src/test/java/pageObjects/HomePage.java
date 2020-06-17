@@ -28,5 +28,10 @@ public class HomePage {
     {
         return driver.getTitle();
     }
+    @FindBy(linkText = "Log out") public WebElement logoutLink;
+    public void clickLogOutLink()
+    {
+        logoutLink.click();
+    }
 
 }

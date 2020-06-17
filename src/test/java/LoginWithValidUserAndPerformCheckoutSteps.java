@@ -3,12 +3,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 
+
 public class LoginWithValidUserAndPerformCheckoutSteps extends TestRunner
 {
     @When("I click on login link")
     public void iClickOnLoginLink()
     {
-        NewRegisterAndCheckOutSteps.homePage.clickLoginLink();
+        BaseTest.homePage.clickLoginLink();
     }
     @Then("I should be navigated to login page")
     public void iShouldBeNavigatedToLoginPage()
@@ -21,21 +22,21 @@ public class LoginWithValidUserAndPerformCheckoutSteps extends TestRunner
     @When("I enter email {string}")
     public void iEnterEmailLuckyStarGmailCom(String email)
     {
-        NewRegisterAndCheckOutSteps.loginPage.setEmailTextBox(email);
+         BaseTest.loginPage.setEmailTextBox(email);
     }
     @And("I enter password {string}")
     public void iEnterPasswordLuckystar(String password)
     {
-        NewRegisterAndCheckOutSteps.loginPage.setPasswordTextBox(password);
+        BaseTest.loginPage.setPasswordTextBox(password);
     }
     @And("I click login button")
     public void iClickLoginButton()
     {
-        NewRegisterAndCheckOutSteps.loginPage.clickLoginButton();
+        BaseTest.loginPage.clickLoginButton();
     }
     @Then("I should be navigated to user login page and i should see msg {string}")
     public void iShouldBeNavigatedToUserLoginPageAndIShouldSeeMsg(String msg)
     {
-        NewRegisterAndCheckOutSteps.loginPage.verifyLoginUserHeader(msg);
+        BaseTest.loginPage.verifyLoginUserHeader(msg);
     }
 }

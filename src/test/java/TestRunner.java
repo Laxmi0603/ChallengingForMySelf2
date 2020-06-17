@@ -1,6 +1,7 @@
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.github.bonigarcia.wdm.config.OperatingSystem;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.jupiter.api.AfterAll;
@@ -8,6 +9,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -15,7 +18,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 @CucumberOptions(
-        //features = {"src/test/resources/LoginWithValidUserAndPerformCheckout.feature"},
+        features = {"src/test/resources"},
        // glue = {"stepDefinitions"},
         plugin = {"pretty", "html:target/site/cucumber-pretty", "json:target/cucumber.json"},
           // plugin = {"json:target/cucumber.json","html:target/site/cucumber-pretty"}
@@ -34,16 +37,24 @@ public class TestRunner
 
     @BeforeClass
     public static void startBrowser() {
-       // WebDriverManager.chromedriver().setup();
-        //driver = new ChromeDriver();
+        //WebDriverManager.chromedriver().setup();
+       // driver = new ChromeDriver();
+        //WebDriverManager.firefoxdriver().setup();
+       // driver = new FirefoxDriver();
+        //WebDriverManager.edgedriver().setup();
+       // WebDriverManager.edgedriver().operatingSystem(OperatingSystem.WIN).setup();
+       // WebDriver driver = new EdgeDriver();
+        //WebDriverManager.edgedriver().forceDownload().setup();
+       // driver = new EdgeDriver();
 
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("browser", "Edge");
-        caps.setCapability("browser_version", "83.0");
-        caps.setCapability("os", "OS X");
-        caps.setCapability("os_version", "Mojave");
+        caps.setCapability("browser", "IE");
+        caps.setCapability("browser_version", "11.0");
+        caps.setCapability("os", "Windows");
+        caps.setCapability("os_version", "10");
         caps.setCapability("resolution", "1024x768");
-        caps.setCapability("name", "LakshmiRegressionTest");
+        caps.setCapability("name", "Lakshmi Regression Test");
+
         try {
              driver = new RemoteWebDriver(new URL(URL), caps);
         } catch (MalformedURLException e) {
@@ -51,10 +62,11 @@ public class TestRunner
         }
 
     }
+
     @AfterClass
     public static void stopBrowser()
     {
-        driver.quit();
+       driver.quit();
     }
 
 }

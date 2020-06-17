@@ -24,3 +24,4 @@ Feature: login to the NopCommerce website with  valid credentials
     And   I set default payment information
     And   I confirm the order
     Then  I should see the order confirmation msg "Your order has been successfully processed!"
+

@@ -21,7 +21,7 @@ public class RegisterPage {
     {
         Assertions.assertTrue(registerPageHeader.isDisplayed(),"Register Page is Displayed?");
     }
-    @FindBy(id = "gender-female") public WebElement femaleRadioButton;
+    @FindBy(css = "input#gender-female") public WebElement femaleRadioButton;
     @FindBy(id = "FirstName") public WebElement firstNameTextBox;
     @FindBy(id = "LastName") public WebElement lastNameTextBox;
     @FindBy(id = "Email") public WebElement emailTextBox;
@@ -37,6 +37,7 @@ public class RegisterPage {
     public void clickFemaleRadioButton()
     {
         femaleRadioButton.click();
+        Assertions.assertTrue(femaleRadioButton.isSelected(),"Female Radio Button is Selected?");
     }
     public void setFirstNameTextBox(String firstname)
     {
