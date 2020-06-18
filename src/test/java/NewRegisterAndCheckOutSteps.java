@@ -14,27 +14,6 @@ import java.util.concurrent.TimeUnit;
 
 public class NewRegisterAndCheckOutSteps extends TestRunner
 {
-
-        /*public static HomePage homePage;
-        public static RegisterPage registerPage;
-        public static LoginPage loginPage;
-        public static UserPage userPage;
-/*
-        @Before
-        public void launchBrowser()
-        {
-
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            driver.manage().window().maximize();
-            System.out.println("This is the command to open the website:@BeforeAll");
-
-            homePage = new HomePage(driver);
-            registerPage = new RegisterPage(driver);
-            userPage = new UserPage(driver);
-            loginPage = new LoginPage(driver);
-
-        }*/
-
         @Given("I navigate to url {string}")
         public void iNavigateToUrl(String url)
         {
@@ -182,13 +161,5 @@ public class NewRegisterAndCheckOutSteps extends TestRunner
         {
             BaseTest.userPage.verifyOrderSuccessMsg(msg);
         }
-        /*
-        @After
-        public void closeBrowser(Scenario scenario)
-        {
-            byte[] screenShotByte = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-            scenario.embed(screenShotByte,"image/png");
-            System.out.println("This is the command to close the website:@AfterAll");
-        }
-        */
+
 }
