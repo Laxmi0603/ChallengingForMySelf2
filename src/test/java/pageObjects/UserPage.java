@@ -43,10 +43,8 @@ public class UserPage {
         Thread.sleep(3000);
         driver.navigate().to("http://twentyconsulting-001-site1.dtempurl.com/cart");
     }
-
     @FindBy(xpath = "//div[@class='page-title']/h1") public WebElement shoppingCartPageHeader;
-    public void verifyShoppingCartPageHeader() throws InterruptedException {
-        Thread.sleep(1000);
+    public void verifyShoppingCartPageHeader() {
         Assertions.assertTrue(shoppingCartPageHeader.isDisplayed(),"shopping cart page is displayed?");
     }
     @FindBy(id = "termsofservice") public WebElement termsOfServiceCheckBox;

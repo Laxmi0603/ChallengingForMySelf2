@@ -48,10 +48,10 @@ public class TestRunner
        // driver = new EdgeDriver();
 
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("browser", "Safari");
-        caps.setCapability("browser_version", "10.1");
-        caps.setCapability("os", "OS X");
-        caps.setCapability("os_version", "Sierra");
+        caps.setCapability("browser", "Chrome");
+        caps.setCapability("browser_version", "83.0");
+        caps.setCapability("os", "Windows");
+        caps.setCapability("os_version", "8.1");
         caps.setCapability("resolution", "1024x768");
         caps.setCapability("name", "Lakshmi Regression Test");
 
