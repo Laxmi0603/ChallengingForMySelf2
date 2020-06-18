@@ -45,8 +45,8 @@ public class UserPage {
     }
 
     @FindBy(xpath = "//div[@class='page-title']/h1") public WebElement shoppingCartPageHeader;
-    public void verifyShoppingCartPageHeader()
-    {
+    public void verifyShoppingCartPageHeader() throws InterruptedException {
+        Thread.sleep(1000);
         Assertions.assertTrue(shoppingCartPageHeader.isDisplayed(),"shopping cart page is displayed?");
     }
     @FindBy(id = "termsofservice") public WebElement termsOfServiceCheckBox;

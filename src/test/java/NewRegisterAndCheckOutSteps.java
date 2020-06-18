@@ -91,8 +91,7 @@ public class NewRegisterAndCheckOutSteps extends TestRunner
         }
 
         @Then("I should be navigated to shopping cart page")
-        public void iShouldBeNavigatedToShoppingCartPage()
-        {
+        public void iShouldBeNavigatedToShoppingCartPage() throws InterruptedException {
             System.out.println(getPageTitle());
             BaseTest.userPage.verifyShoppingCartPageHeader();
         }
