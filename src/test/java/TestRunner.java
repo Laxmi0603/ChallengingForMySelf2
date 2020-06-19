@@ -47,11 +47,11 @@ public class TestRunner
         //WebDriverManager.edgedriver().forceDownload().setup();
        // driver = new EdgeDriver();
 
-           DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("browser", "Chrome");
-        caps.setCapability("browser_version", "79.0");
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("browser", "IE");
+        caps.setCapability("browser_version", "10.0");
         caps.setCapability("os", "Windows");
-        caps.setCapability("os_version", "8.1");
+        caps.setCapability("os_version", "8");
         caps.setCapability("resolution", "1024x768");
         caps.setCapability("name", "Lakshmi Regression Test");
 
