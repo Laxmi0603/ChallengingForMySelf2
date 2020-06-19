@@ -49,9 +49,9 @@ public class TestRunner
 
            DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("browser", "Chrome");
-        caps.setCapability("browser_version", "81.0");
+        caps.setCapability("browser_version", "79.0");
         caps.setCapability("os", "Windows");
-        caps.setCapability("os_version", "10");
+        caps.setCapability("os_version", "8.1");
         caps.setCapability("resolution", "1024x768");
         caps.setCapability("name", "Lakshmi Regression Test");
 
