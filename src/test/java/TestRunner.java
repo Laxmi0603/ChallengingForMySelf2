@@ -30,23 +30,23 @@ import java.net.URL;
 public class TestRunner
 {
    public static WebDriver driver;
-
+/*
     public static final String USERNAME = "lakshmi287";
     public static final String AUTOMATE_KEY = "vzyFrx8KDQkjc9XA9Whe";
     public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
-
+*/
     @BeforeClass
     public static void startBrowser() {
-        //WebDriverManager.chromedriver().setup();
-       // driver = new ChromeDriver();
-        //WebDriverManager.firefoxdriver().setup();
+        WebDriverManager.chromedriver().setup();
+       driver = new ChromeDriver();
+       // WebDriverManager.firefoxdriver().setup();
        // driver = new FirefoxDriver();
         //WebDriverManager.edgedriver().setup();
        // WebDriverManager.edgedriver().operatingSystem(OperatingSystem.WIN).setup();
        // WebDriver driver = new EdgeDriver();
         //WebDriverManager.edgedriver().forceDownload().setup();
        // driver = new EdgeDriver();
-
+/*
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("browser", "Chrome");
         caps.setCapability("browser_version", "83.0");
@@ -59,7 +59,7 @@ public class TestRunner
              driver = new RemoteWebDriver(new URL(URL), caps);
         } catch (MalformedURLException e) {
             e.printStackTrace();
-        }
+        }*/
 
     }
 

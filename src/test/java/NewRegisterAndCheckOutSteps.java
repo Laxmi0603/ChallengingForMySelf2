@@ -55,6 +55,7 @@ public class NewRegisterAndCheckOutSteps extends TestRunner
 
         @Then("I should see Your registration completed")
         public void iShouldSeeYourRegistrationCompleted()
+
         {
             BaseTest.registerPage.verifyNewUserRegistration();
         }
@@ -87,7 +88,7 @@ public class NewRegisterAndCheckOutSteps extends TestRunner
         @And("I click on shopping cart link")
         public void iClickOnShoppingCartLink() throws InterruptedException {
             BaseTest.userPage.clickShoppingCartLink();
-            driver.navigate().refresh();
+            //driver.navigate().refresh();
         }
 
         @Then("I should be navigated to shopping cart page")

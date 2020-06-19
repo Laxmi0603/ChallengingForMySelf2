@@ -21,7 +21,7 @@ public class RegisterPage {
     {
         Assertions.assertTrue(registerPageHeader.isDisplayed(),"Register Page is Displayed?");
     }
-    @FindBy(css = "input#gender-female") public WebElement femaleRadioButton;
+    @FindBy(xpath = "//input[@value='F']") public WebElement femaleRadioButton;
     @FindBy(id = "FirstName") public WebElement firstNameTextBox;
     @FindBy(id = "LastName") public WebElement lastNameTextBox;
     @FindBy(id = "Email") public WebElement emailTextBox;
@@ -32,7 +32,7 @@ public class RegisterPage {
     @FindBy(name = "DateOfBirthMonth") public WebElement monthOfBirthDropDown;
     @FindBy(name = "DateOfBirthYear") public WebElement yearOfBirthDropDown;
     @FindBy(id = "register-button") public WebElement registerButton;
-    @FindBy(css = "div.result") public WebElement registrationSuccessMsg;
+    @FindBy(xpath = "//div[@class='result']") public WebElement registrationSuccessMsg;
     @FindBy(xpath = "//input[@value='Continue']") public WebElement continueButton;
     public void clickFemaleRadioButton()
     {
